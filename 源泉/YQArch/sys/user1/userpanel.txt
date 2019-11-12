@@ -1,0 +1,194 @@
+;;; [源泉设计]-[用户组合命令面板]定义文件，最多可以定义20个面板
+;;;   源泉设计的命令完整名称，可参阅sys\yqshortcut.txt
+;;;
+;;;   标题行格式: ******中文标题,英文标题,每行列n个按钮,面板快捷键
+;;;   类别行格式: ****中文标题,英文标题
+;;;   命令行格式: 命令中文名,命令英文名,原始命令(或lisp程序),快捷键(可空置)
+;;;               注：命令行第4项为快捷键,可空置。如果设置,优先级强于总览命令的快捷键
+;;;                   此文件由用户自己设置，源泉不再更新
+
+
+******[用户面板u1],[User Panel I],28,u1
+;;;
+****【系统设定】,[System Setup]
+用户配置,User Preferences,yqsys,pz             ; ----->这是快捷键例子: 加上",pz",这里pz是快捷键
+命令总览,Command Pandect,yqarch
+打开图钮,Show Toolbars,yq_toolbarson
+关闭图钮,Hide Toolbars,yq_toolbarsoff
+,,                                             ; 空白名为分隔符，不执行
+选择用户,Change User,yq_setuser
+切换语言,Change Language,yq_lang
+设定单位,Drawing Units,yq_setunits
+重载菜单,Reload Menu,yq_menu
+,,
+图纸比例,Drawing Scale,yq_setdwgscale
+绘制图框,Drawing Frame,yq_dwgframe
+,,
+详细帮助,YQArch Help,yq_help
+源泉版本,YQArch Version,yq_ver
+下载网站,YQArch Website,yq_website
+源泉论坛,YQArch Forum,yq_forum
+卸载源泉,Uninstall,yq_uninstall
+关于源泉,About YQArch,yq_about
+
+****【平面墙柱】,[Plane Wall/Column]
+绘制轴线,Axis Line,yq_axisline
+轴线网格,Draw Grid Axis,yq_gridaxis
+,,
+画平面墙,Wall,yq_wall
+智能墙剪,Wall Scissor,yq_trim_fix_wall
+修正墙厚,Wall Thickness,yq_wall_chgthk
+轴线变墙,Lines to Walls,yq_line2wall
+净距偏移,Wall Offseting,yq_wall_cdoffset
+,,
+求墙轴线,Wall Axis,yq_wall2axis
+填充墙柱,Fill in Walls,yq_fill_wall
+,,
+方形柱子,Rectangular Column,yq_r_column
+圆形柱子,O Shape Column,yq_o_column
+Ｌ形柱子,L Shape Column,yq_l_column
+Ｔ形柱子,T Shape Column,yq_t_column
+十形柱子,+ Shape Column,yq_c_column
+,,
+轴线布柱,Arrange Columns,yq_axis_column
+变成柱子,Pline to Column,yq_pline2column
+填充柱子,Fill in Columns,yq_fill_column
+,,
+删墙柱门,EnglishName,yq_erase_wall
+
+****【平面门窗】,[Plane Window/Door]
+墙上开门,Open Door,yq_hole_door
+两点画门,Door,yq_door
+门窗置换,Replace WD/DR,yq_windoor_replace
+墙上开洞,Open Hole,yq_hole
+,,
+开参数窗,Open Window,yq_hole_window
+画参数窗,Window,yq_window
+换参数窗,Replace by Window,yq_window_replace
+,,
+开转角窗,Open Corner Window,yq_hole_cornerwindow
+换转角窗,Replace Corner Window,yq_cwindow_replace
+,,
+开门套门,Open Pocket Door,yq_hole_pocketdoor
+两点套门,Draw a Pocket Door,yq_pocketdoor
+换为套门,Replace by Pocket Door,yq_pocketdoor_replace
+,,
+门 槛 线,Doorsill Manager,yq_doorsill
+门 洞 线,Door Opening Manager,yq_dooropening
+,,
+线段变窗,Line to Windows,yq_line2window
+改门窗宽,Change WD/DR Width,yq_width_windoor
+平移门窗,Move WD/DR,yq_move_windoor
+,,
+修正门窗,Repair WD/DR/COL,yq_repair
+移动修正,Move and Fix,yq_moveandfix
+复制修正,Copy and Fix,yq_copyandfix
+镜像修正,Mirror and Fix,yq_mirrorandfix
+,,
+门窗编号,Window SN,yq_winSerialNumber
+
+****【杂项】,[Misc]
+横构造线,Horizontal xline,(command "xline" "h" ),xh         ; ----->这是添加lisp程序的例子
+竖构造线,Vertical xline,(command "xline" "v" ),xv
+ggg.exe,Snap Gif,(yq_dos_execute "D:/_bigd/gif动画制作软件/ggg.exe"),gif
+列表换字-管径,Text List-DN,(yq_list2text '("DN15""DN20""DN32""DN40""DN50""DN60""DN65""DN80""DN100""DN110""DN150""DN200""DN300")),dn
+列表换字-材料,Text List-Material,(yq_list2text '("大理石""木饰面""墙纸""镜面不锈钢""夹丝玻璃""灰镜""防滑砖""石膏线")),clmc
+
+
+
+******[用户面板u2],[User Panel II],28,u2
+
+****【文字内容】,[Text Content]
+用户词库,User Dictionary,yq_userdict
+翻译文字,Translate Text,yq_translate
+刷新文字,Update Form List,yq_updtextlist
+,,
+单行文字,Input a Text,yq_text
+编辑文字,Modify any Text,yq_superedit
+字典换字,Dictionary to Text,yq_dict2text
+新建输入,Create/Input Texts,yq_hz_text
+编辑输出,Edit/Output Texts,yq_hz_edit
+,,
+计算替换,Replace Text,yq_text_replace
+,,
+合并文字,Join Texts,yq_text_append
+分行合并,Join Many Texts,yq_jtext
+断为两段,Break Text,yq_text_break2
+散为字符,To Characters,yq_etext
+,,
+递增复制,Increment Copies,yq_array_numbers
+统一增量,Add Increment,yq_increase_numbers
+递增文字,Increase Texts,yq_increase_text
+寻找文字,Seek Text,yq_findtext
+
+****【文字其他】,[Text Other]
+新建样式,New Text Style,yq_sldstyles
+,,
+设定字样,Set Current Style,yq_text_cstyle
+字样更新,Update Text,yq_text_update
+替换字档,Replace Fonts,yq_replacefonts
+,,
+批量排版,Change Many Texts,yq_changetext
+字高宽比,Height & Aspect,yq_text_width
+,,
+对正左下,Alignment Left,yq_text_alignmentleft
+对正右下,Alignment Right,yq_text_alignmentright
+镜像恢复,Restore Mirrored,yq_text_restoremirr
+,,
+字转属性,Text to Attdef,yq_text2attdef
+炸为线段,Explode to Lines,yq_txtexp
+
+****【标注绘制】,[Dimension Draw]
+水平垂直,Dim Linear,yq_dim_linear
+对齐标注,Dim Aligned,yq_dim_aligned
+基线标注,Dim Baseline,yq_dim_baseline
+半径标注,Dim Radius,yq_dim_radius
+直径标注,Dim Diameter,yq_dim_diameter
+角度标注,Dim Angular,yq_dim_angular
+弧长标注,Arc Length,yq_dim_arc
+快速标注,Dim Quick,yq_dim_qdim
+,,
+闭合空间,Closed Space,yq_dim_closedspace
+标多段线,Dim Pline,yq_dim_pline
+,,
+门窗标注,Dim Axis/Wins,yq_dim_axiswd
+图块内墙,Dim Blocks/Walls,yq_dim_blocks
+立面柜子标注,Dim Cupboard,yq_dim_cupboard
+,,
+踏步标注,Dim Steps,yq_dim_stairs
+交点标注,Dim Break Inters.,yq_dim_intpts
+曲线交点,Dim Curve Inters.,yq_dim_curveintpts
+交点弧长,Dim Arc at Inters.,yq_dim_arcparts
+选字重建,Rebuild by Texts,yq_dim_rearrange
+合并基线,Merge Baseline,yq_dim_mergebase
+,,
+切换图层,Switch DIM Layer,yq_dim_switchlayer
+设定样式,Set DimStyle,yq_dim_cstyle
+标样更新,Dim Update,yq_dim_update
+强制样式,Switch YQ Dims,yq_dim_switchstyle
+
+****【标注修改】,[Dimension Modify]
+文字避让,Adjust TEXT Pos,yq_dim_adjust
+,,
+移动脚点,Extend Feet,yq_dim_extend
+分裂扩展,Split Dim,yq_dim_divide
+标注合并,Merge Dims,yq_dim_merge
+排齐脚界,Align Mline/Feet,yq_dim_align
+排齐界线,Align Mline,yq_dim_aligndimline
+排齐脚点,Align Feet,yq_dim_alignpoints
+
+界线长度,Fix Ext. Lens,yq_dim_extlen
+修正间距,Base Spacing,yq_dim_adjustbase
+批量间距,Batch Spacing,yq_dim_batchbase
+显示脚线,Show Extensions,yq_dim_showextline
+切换对转,Aligned to Rotated,yq_dim_switch_ar
+,,
+翻转文字,Overturn Text,yq_dim_reverse
+固化文字,Lock Text,yq_dim_fix
+恢复原值,Reset Text,yq_dim_recover
+转化为米,To Meter,yq_dim_mmtom
+标注取整,Rounds Value,yq_dim_round
+改新文字,New Dim Text,yq_dim_newtext
+,,
+文字移位,Move Dim Text,yq_dim_tedit
+文字复位,Text Home,yq_dim_home
